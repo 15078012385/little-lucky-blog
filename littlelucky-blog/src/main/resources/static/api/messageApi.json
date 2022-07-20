@@ -1,0 +1,52 @@
+{
+  "code": 200,
+  "msg": "查询成功",
+  "pages": 0,
+  "data": [
+    {
+      "id": 1,
+      "accessIp": "243.136.116.54",
+      "messageContent": "您好呀，Lucky-SIX",
+      "messageTime": "1992-07-01 06:44:59",
+      "qq": "321395678",
+      "qqAvatar": "https://q2.qlogo.cn/headimg_dl?spec=100&dst_uin=321395678",
+      "qqNickname": "丶幸运六"
+    },
+    {
+      "id": 2,
+      "accessIp": "209.86.247.25",
+      "messageContent": "您好呀，Lucky-SIX",
+      "messageTime": "1971-01-18 12:56:45",
+      "qq": "954384434",
+      "qqAvatar": "https://q2.qlogo.cn/headimg_dl?spec=100&dst_uin=954384434",
+      "qqNickname": "明天会更好"
+    },
+    {
+      "id": 2,
+      "accessIp": "209.86.247.25",
+      "messageContent": "您好呀，Lucky-SIX",
+      "messageTime": "1971-01-18 12:56:45",
+      "qq": "954384434",
+      "qqAvatar": "https://q2.qlogo.cn/headimg_dl?spec=100&dst_uin=954384434",
+      "qqNickname": "明天会更好"
+    },
+    {
+      "id": 2,
+      "accessIp": "209.86.247.25",
+      "messageContent": "您好呀，Lucky-SIX",
+      "messageTime": "1971-01-18 12:56:45",
+      "qq": "954384434",
+      "qqAvatar": "https://q2.qlogo.cn/headimg_dl?spec=100&dst_uin=954384434",
+      "qqNickname": "明天会更好"
+    },
+    {
+      "id": 2,
+      "accessIp": "209.86.247.25",
+      "messageContent": "您好呀，Lucky-SIX",
+      "messageTime": "1971-01-18 12:56:45",
+      "qq": "954384434",
+      "qqAvatar": "https://q2.qlogo.cn/headimg_dl?spec=100&dst_uin=954384434",
+      "qqNickname": "明天会更好"
+    }
+  ]
+}

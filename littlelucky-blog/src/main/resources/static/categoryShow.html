@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>类别</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon"/>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+    <!--    分页插件样式-->
+    <link rel="stylesheet" type="text/css" href="css/paging.css">
+
+    <!--    公共css-->
+    <link rel="stylesheet" href="css/public.css">
+
+    <!--    流光字样式-->
+    <style type="text/css">
+        h2 {
+            margin: 0;
+            background: -webkit-linear-gradient(left,
+            #ffffff,
+            #ff0000 6.25%,
+            #ff7d00 12.5%,
+            #ffff00 18.75%,
+            #00ff00 25%,
+            #00ffff 31.25%,
+            #0000ff 37.5%,
+            #ff00ff 43.75%,
+            #ffff00 50%,
+            #ff0000 56.25%,
+            #ff7d00 62.5%,
+            #ffff00 68.75%,
+            #00ff00 75%,
+            #00ffff 81.25%,
+            #0000ff 87.5%,
+            #ff00ff 93.75%,
+            #ffff00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            animation: masked-animation 5s infinite linear;
+        }
+
+        @keyframes masked-animation {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -100%, 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+<div id="snowflakeContainer"><p class="snowflake">*</p></div>
+<script src="js/fallingsnow_v6.js"></script>
+<script src="js/prefixfree.min.js"></script>
+
+<!--页首-->
+<div class="container-fluid" style="opacity:0.4;height: 60px;line-height: 50px;">
+
+    <div class="row">
+        <div class="col-md-1 col-lg-offset-1">
+            <!--            <img src="img/logo.png"-->
+            <!--                 style="height: 50px; border-radius: 10px;margin-top: 5px;">-->
+        </div>
+
+        <div class="col-md-1 col-md-offset-1">
+            <a href="index.html">
+                <button type="button" class="btn btn-info btn-lg" id="index">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    首页
+                </button>
+            </a>
+        </div>
+
+        <div class="col-md-1">
+            <a href="category.html">
+                <button type="button" class="btn btn-success btn-lg">
+                        <span class="
+                            glyphicon glyphicon-tags" aria-hidden="true"></span>
+                    分类
+                </button>
+            </a>
+
+        </div>
+
+        <div class="col-md-1">
+
+            <a href="timeline.html">
+
+                <button type="button" class="btn btn-info btn-lg" id="timeline">
+                        <span class="
+                            glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    时间
+                </button>
+            </a>
+
+        </div>
+
+        <div class="col-md-1">
+            <a href="photo.html">
+                <button type="button" class="btn btn-info btn-lg" id="musicBox">
+                        <span class="
+                            glyphicon glyphicon-picture" aria-hidden="true"></span>
+                    相片
+                </button>
+            </a>
+        </div>
+
+
+        <div class="col-md-1">
+
+            <a href="message.html">
+                <button type="button" class="btn btn-info btn-lg" id="message">
+                        <span class="
+                            glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    留言
+                </button>
+            </a>
+
+        </div>
+
+
+        <div class="col-md-1">
+            <a href="about.html">
+                <button type="button" class="btn btn-info btn-lg" id="about">
+                        <span class="
+                            glyphicon glyphicon-leaf" aria-hidden="true"></span>
+                    关于
+                </button>
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!--分类信息-->
+<div class="jumbotron" style="width: 50%; margin: 0 auto; margin-top: 50px;text-align: center;">
+    <span class="glyphicon glyphicon-bookmark"></span>
+    <label id="category"></label>
+</div>
+
+
+<!--    数据展示-->
+<div id="main"></div>
+<br>
+<br>
+<div id="pageTool" style="margin-right: 7%"></div>
+<br>
+<br>
+
+<!--页脚-->
+<div class="jumbotron" style="height:auto; text-align: center;background-color:#d1ccc0;opacity:0.8">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>联系我</h2>
+            <br> QQ：<a>321395678</a>
+        </div>
+        <div class="col-md-4"><img src="img/wechat.jpg" width="150px"></div>
+        <div class="col-md-4">
+            <h2>LUCKY-SIX</h2>
+            Hello，<br>大家好呀。<br>这是我的个人博客,
+            <br>我会在这分享一些学到的东西。
+            <a href="login.html" style="text-decoration: none">
+                <h3><span class="glyphicon glyphicon-cog"></span>
+                    管理后台</h3>
+            </a>
+        </div>
+    </div>
+
+    <br>
+    <font style="color:black"><a style="text-decoration: none">Copyright © 2022 - 2022 小幸运 Designed by
+        CHEN</a></font>
+    <br>
+    <font style="color:black"><a style="text-decoration: none"> <img src="/img/备案图标.png">备案号：桂ICP备2022006569号-1</a></font>
+</div>
+
+</body>
+
+<!--jq-->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<!--引入这个js，处理后端返回的json数据、然后展示-->
+<script src="js/htmlHandle1.js"></script>
+<script type="text/javascript" src="js/paging.js"></script>
+<script>
+
+    var category = getUrlParam('category');
+    $("#category").text(category);
+
+    //获取url中的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return encodeURI(r[2]);
+        return null; //返回参数值
+    }
+
+
+    var total = 0;
+    var page = new Paging();
+    $.get('/category/queryArticleByPage?category=' + category, {current: 1, pagesize: 5}, function (resp) {
+        total = resp.total;
+        //    终于意识到.....采用模板引擎来操作这些数据、比拼接数据更简便。
+        var articleList = htmlHandle1(resp);
+        document.getElementById("main").innerHTML = "";
+        //内容追加
+        $("#main").append(articleList)
+        page.init({
+            target: $('#pageTool'), pagesize: 5, count: total, current: 1,
+            // 这个callback，是点击后的回调函数
+            callback: function (pagecount, size) {
+                $.get('/category/queryArticleByPage?category=' + category, {
+                    current: pagecount,
+                    pagesize: size
+                }, function (resp) {
+                    total = resp.total;
+                    //    终于意识到.....采用模板引擎来操作这些数据、比拼接数据更简便。
+                    var articleList = htmlHandle1(resp);
+                    document.getElementById("main").innerHTML = "";
+                    //内容追加
+                    $("#main").append(articleList)
+                    page.render({count: total, current: pagecount});
+                })
+            }
+        })
+    })
+
+</script>
+
+
+</html>

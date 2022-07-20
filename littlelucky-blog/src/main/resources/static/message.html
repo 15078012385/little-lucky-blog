@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>留言</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon"/>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+
+    <!--    公共css-->
+    <link rel="stylesheet" href="css/public.css">
+
+    <!--    流光字样式-->
+    <style type="text/css">
+        h2 {
+            margin: 0;
+            background: -webkit-linear-gradient(left,
+            #ffffff,
+            #ff0000 6.25%,
+            #ff7d00 12.5%,
+            #ffff00 18.75%,
+            #00ff00 25%,
+            #00ffff 31.25%,
+            #0000ff 37.5%,
+            #ff00ff 43.75%,
+            #ffff00 50%,
+            #ff0000 56.25%,
+            #ff7d00 62.5%,
+            #ffff00 68.75%,
+            #00ff00 75%,
+            #00ffff 81.25%,
+            #0000ff 87.5%,
+            #ff00ff 93.75%,
+            #ffff00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            animation: masked-animation 5s infinite linear;
+        }
+
+        @keyframes masked-animation {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -100%, 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+<div id="app">
+
+    <div id="snowflakeContainer"><p class="snowflake">*</p></div>
+    <script src="js/fallingsnow_v6.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+
+    <!--页首-->
+    <div class="container-fluid" style="opacity:0.4;height: 60px;line-height: 50px;">
+
+        <div class="row">
+            <div class="col-md-1 col-lg-offset-1">
+                <!--            <img src="img/logo.png"-->
+                <!--                 style="height: 50px; border-radius: 10px;margin-top: 5px;">-->
+            </div>
+
+            <div class="col-md-1 col-md-offset-1">
+                <a href="index.html">
+                    <button type="button" class="btn btn-info btn-lg" id="index">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        首页
+                    </button>
+                </a>
+            </div>
+
+            <div class="col-md-1">
+                <a href="category.html">
+                    <button type="button" class="btn btn-info btn-lg">
+                            <span class="
+                        glyphicon glyphicon-tags" aria-hidden="true"></span>
+                        分类
+                    </button>
+                </a>
+
+            </div>
+
+            <div class="col-md-1">
+
+                <a href="timeline.html">
+
+                    <button type="button" class="btn btn-info btn-lg" id="timeline">
+                            <span class="
+                        glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        时间
+                    </button>
+                </a>
+
+            </div>
+
+            <div class="col-md-1">
+                <a href="photo.html">
+                    <button type="button" class="btn btn-info btn-lg" id="musicBox">
+                            <span class="
+                        glyphicon glyphicon-picture" aria-hidden="true"></span>
+                        相片
+                    </button>
+                </a>
+            </div>
+
+
+            <div class="col-md-1">
+
+                <a href="message.html">
+                    <button type="button" class="btn btn-success btn-lg" id="message">
+                            <span class="
+                        glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        留言
+                    </button>
+                </a>
+
+            </div>
+
+
+            <div class="col-md-1">
+                <a href="about.html">
+                    <button type="button" class="btn btn-info btn-lg" id="about">
+                            <span class="
+                        glyphicon glyphicon-leaf" aria-hidden="true"></span>
+                        关于
+                    </button>
+                </a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!--小短文-->
+    <div style="text-align: center;color: white">
+        <h1>留言板
+            <br>
+            <h2>岁岁年年长相似,人来人往不由己。</h2>
+        </h1>
+    </div>
+
+
+    <br>
+    <br>
+    <!--留言-->
+    <div id="messageArea" style="margin: 0 auto;width: 80% ">
+        <form id="messageForm">
+                <textarea style="resize: none;width: 100%;height: 200px;border-radius: 5px"
+                          placeholder="请输入留言信息........ (提示：已采用JSR303校验准则)" name="messageContent"></textarea>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" name="qq" placeholder="请输入QQ号" class="form-control" style="width: 200px">
+                        <!--                        <el-button type="primary" size="medium" id="message"> 留言</el-button>-->
+                        <button type="button" class="btn btn-info" id="ms" style="margin-left: 10px">留言</button>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            <!--    <button type="button" class="btn btn-primary"></button>-->
+            <input type="text" id="name" name="name" hidden>
+            <input type="text" id="qlogo" name="qlogo" hidden>
+        </form>
+    </div>
+
+    <hr style="width: 80%">
+
+    <!--留言列表-->
+    <div style="width: 80% ;margin: 0 auto;background-color: white;border-radius: 5px">
+        <!--            列表展示-->
+        <div id="messageList"></div>
+
+        <!--        <div>-->
+        <!--            &lt;!&ndash;        头像&ndash;&gt;-->
+        <!--            <a href="#"> <img src="img/avator.png" width="70px" height="70px"-->
+        <!--                              style="margin-left: 5%;margin-top: 20px;border-radius: 70px">-->
+        <!--            </a>-->
+        <!--            &lt;!&ndash;        昵称、时间&ndash;&gt;-->
+        <!--            <div style="height: 60%;text-indent: 50px;color: #00a8c6">-->
+        <!--                <strong>访客</strong> <font style="color: silver">2022-07-10 10:34</font>-->
+        <!--            </div>-->
+        <!--            &lt;!&ndash;        内容&ndash;&gt;-->
+        <!--            <div style="text-indent: 30px;margin: 0 auto;margin-left: 50px;margin-right: 50px">-->
+        <!--                青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div>-->
+        <!--            &lt;!&ndash;        头像&ndash;&gt;-->
+        <!--            <a href="#"> <img src="img/avator.png" width="70px" height="70px"-->
+        <!--                              style="margin-left: 5%;margin-top: 20px;border-radius: 70px">-->
+        <!--            </a>-->
+        <!--            &lt;!&ndash;        昵称、时间&ndash;&gt;-->
+        <!--            <div style="height: 60%;text-indent: 50px;color: #00a8c6">-->
+        <!--                <strong>访客</strong> <font style="color: silver">2022-07-10 10:34</font>-->
+        <!--            </div>-->
+        <!--            &lt;!&ndash;        内容&ndash;&gt;-->
+        <!--            <div style="text-indent: 30px;margin: 0 auto;margin-left: 50px;margin-right: 50px">-->
+        <!--                青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <!--        <div>-->
+        <!--            &lt;!&ndash;        头像&ndash;&gt;-->
+        <!--            <a href="#"> <img src="img/avator.png" width="70px" height="70px"-->
+        <!--                              style="margin-left: 5%;margin-top: 20px;border-radius: 70px">-->
+        <!--            </a>-->
+        <!--            &lt;!&ndash;        昵称、时间&ndash;&gt;-->
+        <!--            <div style="height: 60%;text-indent: 50px;color: #00a8c6">-->
+        <!--                <strong>访客</strong> <font style="color: silver">2022-07-10 10:34</font>-->
+        <!--            </div>-->
+        <!--            &lt;!&ndash;        内容&ndash;&gt;-->
+        <!--            <div style="text-indent: 30px;margin: 0 auto;margin-left: 50px;margin-right: 50px">-->
+        <!--                青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心,青青子衿悠悠我心-->
+        <!--            </div>-->
+
+        <!--        </div>-->
+
+
+        <br>
+        <br>
+    </div>
+
+    <br>
+    <br>
+
+    <!--页脚-->
+    <div class="jumbotron" style="height:auto; text-align: center;background-color:#d1ccc0;opacity:0.8">
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>联系我</h2>
+                <br> QQ：<a>321395678</a>
+            </div>
+            <div class="col-md-4"><img src="img/wechat.jpg" width="150px"></div>
+            <div class="col-md-4">
+                <h2>LUCKY-SIX</h2>
+                Hello，<br>大家好呀。<br>这是我的个人博客,
+                <br>我会在这分享一些学到的东西。
+                <a href="login.html" style="text-decoration: none">
+                    <h3><span class="glyphicon glyphicon-cog"></span>
+                        管理后台</h3>
+                </a>
+            </div>
+        </div>
+
+        <br>
+        <font style="color:black"><a style="text-decoration: none">Copyright © 2022 - 2022 小幸运 Designed by
+            CHEN</a></font>
+        <br>
+        <font style="color:black"><a style="text-decoration: none"> <img src="/img/备案图标.png">备案号：桂ICP备2022006569号-1</a></font>
+    </div>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script src="js/htmlHandle1.js"></script>
+<!--轻量js弹框-->
+<script src="js/popMessage.js"></script>
+
+<script>
+
+    //初始化页面数据
+    $.ajax({
+        url: "/message/queryAll",
+        type: "GET",
+        success: function (resp) {
+            // console.log(resp.data)
+            var messageHtml = messageHandle(resp);
+            $("#messageList").append(messageHtml)
+        }
+    })
+
+    //留言
+    $("#ms").click(function () {
+        //QQ正则
+        var qqCheck = /^[1-9]{1}[0-9]{4,14}$/;
+        var erroMessage = "提示：";
+        //获取QQ
+        var qq = $("input").val();
+        //留言内容
+        var message = $("textarea").val();
+        //QQ校验
+        if (!qqCheck.test(qq)) {
+            erroMessage += "  QQ格式有误  "
+        }
+        //    留言校验
+        if (message.length === 0) {
+            erroMessage += "  留言不能为空  "
+        }
+        if (message.length > 0) {
+            if (message.trim().length === 0) {
+                erroMessage += "  不能全部空格  "
+            }
+            if (message.length > 200) {
+                erroMessage += "  留言信息过长  "
+            }
+        }
+        //    如果存在错误信息，则轻量弹出
+        if (erroMessage.length > 5) {
+            Message.error(erroMessage);
+            return false;
+        }
+
+        //点击一次后，禁用按钮
+        $("#ms").attr("disabled", "disabled")
+
+        $.ajax({
+            url: "https://api.uomg.com/api/qq.info?qq=" + qq,
+            type: "GET",
+            dataType: "JSON",
+            success: function (resp) {
+                // console.log(resp)
+                //赋值
+                $("#qlogo").val(resp.qlogo)
+                $("#name").val(resp.name)
+                // console.log(resp.name)
+                // console.log(resp.qlogo)
+                // console.log(resp.qq)
+                //将该json提交
+                // console.log($("#messageForm").serializeObject());
+                $.ajax({
+                    url: "/message/add",
+                    type: "POST",
+                    data: JSON.stringify($("form").serializeObject()),
+                    contentType: "application/json;charset=UTF-8",
+                    success: function (resp) {
+                        if (resp.code == 200) {
+                            Message.success("留言成功，感谢你的留言")
+                            //初始化页面数据、重新渲染留言区
+                            $.ajax({
+                                url: "/message/queryAll",
+                                type: "GET",
+                                success: function (resp) {
+                                    // console.log(resp.data)
+                                    var messageHtml = messageHandle(resp);
+                                    document.getElementById("messageList").innerHTML = "";
+                                    $("#messageList").append(messageHtml)
+                                }
+                            })
+
+                        } else {
+                            Message.error(resp.msg)
+                        }
+                    }
+                })
+                $("textarea").val("");
+                $("input").val("");
+                $("#ms").removeAttr("disabled")
+            }
+        })
+        return false
+    })
+
+
+    /**
+     * 自动将form表单封装成json对象
+     */
+    $.fn.serializeObject = function () {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
+</script>
+
+
+</html>

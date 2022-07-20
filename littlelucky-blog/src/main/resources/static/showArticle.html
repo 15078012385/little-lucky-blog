@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文章</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon"/>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+
+    <!--    公共css-->
+    <link rel="stylesheet" href="css/public.css">
+
+    <!--    流光字样式-->
+    <style type="text/css">
+        h2 {
+            margin: 0;
+            background: -webkit-linear-gradient(left,
+            #ffffff,
+            #ff0000 6.25%,
+            #ff7d00 12.5%,
+            #ffff00 18.75%,
+            #00ff00 25%,
+            #00ffff 31.25%,
+            #0000ff 37.5%,
+            #ff00ff 43.75%,
+            #ffff00 50%,
+            #ff0000 56.25%,
+            #ff7d00 62.5%,
+            #ffff00 68.75%,
+            #00ff00 75%,
+            #00ffff 81.25%,
+            #0000ff 87.5%,
+            #ff00ff 93.75%,
+            #ffff00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            animation: masked-animation 5s infinite linear;
+        }
+
+        @keyframes masked-animation {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -100%, 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+<div id="app">
+
+    <div id="snowflakeContainer"><p class="snowflake">*</p></div>
+    <script src="js/fallingsnow_v6.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+
+    <!--导航-->
+    <div class="container-fluid" style="opacity:0.4;height: 60px;line-height: 50px;">
+        <div class="row">
+            <div class="col-md-1 col-lg-offset-1">
+                <!--            <img src="img/logo.png"-->
+                <!--                 style="height: 50px; border-radius: 10px;margin-top: 5px;">-->
+            </div>
+
+            <div class="col-md-1 col-md-offset-1">
+                <a href="index.html">
+                    <button type="button" class="btn btn-info btn-lg" id="index">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        首页
+                    </button>
+                </a>
+            </div>
+
+            <div class="col-md-1">
+                <a href="category.html">
+                    <button type="button" class="btn btn-info btn-lg" id="category">
+                            <span class="
+                            glyphicon glyphicon-tags" aria-hidden="true"></span>
+                        分类
+                    </button>
+                </a>
+
+            </div>
+
+            <div class="col-md-1">
+
+                <a href="timeline.html">
+
+                    <button type="button" class="btn btn-info btn-lg" id="timeline">
+                            <span class="
+                            glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        时间
+                    </button>
+                </a>
+
+            </div>
+
+            <div class="col-md-1">
+                <a href="photo.html">
+                    <button type="button" class="btn btn-info btn-lg" id="musicBox">
+                            <span class="
+                            glyphicon glyphicon-picture" aria-hidden="true"></span>
+                        相片
+                    </button>
+                </a>
+            </div>
+
+
+            <div class="col-md-1">
+
+                <a href="message.html">
+                    <button type="button" class="btn btn-info btn-lg" id="message">
+                            <span class="
+                            glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        留言
+                    </button>
+                </a>
+
+            </div>
+
+
+            <div class="col-md-1">
+                <a href="about.html">
+                    <button type="button" class="btn btn-info btn-lg" id="about">
+                            <span class="
+                            glyphicon glyphicon-leaf" aria-hidden="true"></span>
+                        关于
+                    </button>
+                </a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="jumbotron" style="width: 50%; margin: 0 auto; margin-top: 50px;text-align: center;">
+        <span class="glyphicon glyphicon-bookmark"></span>
+        <!--        Hello~你好呀.宝-->
+        <label id="title"></label>
+    </div>
+
+
+    <!--    正文-->
+    <div class="jumbotron" style="width: 80%; margin: 0 auto; margin-top: 50px; height: auto">
+        <div class="content" id="content" style="width: 70%;margin: 0 auto">
+            <!--            <h1>-->
+            <!--                <font color="#00b0f0">Hello 你好呀.</font>-->
+            <!--            </h1>-->
+
+            <!--            <div>-->
+            <!--                <blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">-->
+            <!--                    <p>-->
+            <!--                        这是我第一个博客项目，从需求分析，到原型设计，再到项目准备、搭建.....</p>-->
+            <!--                    <p>从前端到后端，数不尽的修改次数...</p>-->
+            <!--                    <p>这个项目，将会写进我的个人简历......</p>-->
+            <!--                </blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-->
+            <!--                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img-->
+            <!--                    src="http://localhost:8080/upload/4df6fc4a0ee94ad1bba1428a515b8970.jpg">&nbsp; &nbsp;<img-->
+            <!--                    src="http://localhost:8080/upload/4df6fc4a0ee94ad1bba1428a515b8970.jpg">&nbsp;&nbsp;<img-->
+            <!--                    src="http://localhost:8080/upload/4df6fc4a0ee94ad1bba1428a515b8970.jpg">&nbsp;<img-->
+            <!--                    src="http://localhost:8080/upload/4df6fc4a0ee94ad1bba1428a515b8970.jpg">&nbsp; &nbsp;<img-->
+            <!--                    src="http://localhost:8080/upload/4df6fc4a0ee94ad1bba1428a515b8970.jpg">&nbsp;&nbsp;<img-->
+            <!--                    src="http://localhost:8080/upload/4df6fc4a0ee94ad1bba1428a515b8970.jpg"><br>-->
+            <!--            </div>-->
+            <!--            <pre class=" prettyprint lang-java"><pre-->
+            <!--                    style="background-color:#2d2a2e;color:#fcfcfa;font-family:'JetBrains Mono',monospace;font-size:13.5pt;"><span-->
+            <!--                    style="color:#ff6188;">import </span><span style="color:#78dce8;font-style:italic;">org.springframework.boot.SpringApplication</span><span-->
+            <!--                    style="color:#939293;">;<br></span><span style="color:#ff6188;">import </span><span-->
+            <!--                    style="color:#78dce8;font-style:italic;">org.springframework.boot.autoconfigure.SpringBootApplication</span><span-->
+            <!--                    style="color:#939293;">;<br></span><span style="color:#939293;"><br></span><span-->
+            <!--                    style="color:#78dce8;font-style:italic;">@SpringBootApplication<br></span><span-->
+            <!--                    style="color:#ff6188;">public class </span>Hello<span-->
+            <!--                    style="font-size: 13.5pt; color: rgb(120, 220, 232); font-style: italic;">SpringbootApplication</span> <span-->
+            <!--                    style="font-size: 13.5pt; color: rgb(255, 215, 0);">{</span><br><span-->
+            <!--                    style="color:#ffd700;"><br></span><span style="color:#ffd700;">    </span><span-->
+            <!--                    style="color:#ff6188;">public static void </span><span style="color:#a9dc76;">main</span><span-->
+            <!--                    style="color:#ffd700;">(</span><span style="color:#78dce8;font-style:italic;">String</span><span-->
+            <!--                    style="color:#ffd700;">[] </span><span style="color:#f59762;font-style:italic;">args</span><span-->
+            <!--                    style="color:#ffd700;">) </span><span style="color:#87cefa;">{<br></span><span-->
+            <!--                    style="color:#87cefa;">        </span><span style="color:#78dce8;font-style:italic;">SpringApplication</span><span-->
+            <!--                    style="color:#939293;">.</span><span style="font-style:italic;">run</span><span-->
+            <!--                    style="color:#ffd700;">(</span>Hello<span-->
+            <!--                    style="font-size: 13.5pt; color: rgb(120, 220, 232); font-style: italic;">SpringbootApplication</span>.<span-->
+            <!--                    style="font-size: 13.5pt; color: rgb(255, 97, 136);">class</span><span-->
+            <!--                    style="font-size: 13.5pt; color: rgb(147, 146, 147);">, </span><span-->
+            <!--                    style="font-size: 13.5pt; color: rgb(245, 151, 98); font-style: italic;">args</span><span-->
+            <!--                    style="font-size: 13.5pt; color: rgb(255, 215, 0);">)</span><span-->
+            <!--                    style="font-size: 13.5pt; color: rgb(147, 146, 147);">;</span><br><span-->
+            <!--                    style="color:#939293;">    </span><span style="color:#87cefa;">}<br></span><span-->
+            <!--                    style="color:#87cefa;"><br></span><span style="color:#ffd700;">}</span></pre>-->
+            <!--                </pre>-->
+            <!--            <br><br>-->
+        </div>
+        <hr style="width: 40%;display: inline-block;margin-left: 10%">
+        <strong style="color: #1a0037"> END</strong>
+        <hr style="width: 40%;display: inline-block">
+    </div>
+
+
+    <br>
+    <br>
+
+    <!--页脚-->
+    <div class="jumbotron" style="height:auto; text-align: center;background-color:#d1ccc0;opacity:0.8">
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>联系我</h2>
+                <br> QQ：<a>321395678</a>
+            </div>
+            <div class="col-md-4"><img src="img/wechat.jpg" width="150px"></div>
+            <div class="col-md-4">
+                <h2>LUCKY-SIX</h2>
+                Hello，<br>大家好呀。<br>这是我的个人博客,
+                <br>我会在这分享一些学到的东西。
+                <a href="login.html" style="text-decoration: none">
+                    <h3><span class="glyphicon glyphicon-cog"></span>
+                        管理后台</h3>
+                </a>
+            </div>
+        </div>
+
+        <br>
+        <font style="color:black"><a style="text-decoration: none">Copyright © 2022 - 2022 小幸运 Designed by
+            CHEN</a></font>
+        <br>
+        <font style="color:black"><a style="text-decoration: none"> <img src="/img/备案图标.png">备案号：桂ICP备2022006569号-1</a></font>
+    </div>
+</div>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script>
+
+    var id = getUrlParam('id');
+    if (id != null) {
+        console.log("ID====>" + id)
+    }
+    $("#id").val(id);
+    //初始化
+
+    $.ajax({
+        url: "/index/queryOne?id=" + id,
+        type: "get",
+        success: function (resp) {
+            var data = resp.data;
+            $("#content").append(data.content)
+            $("#title").text(data.title)
+        }
+    })
+
+    //获取url中的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return encodeURI(r[2]);
+        return null; //返回参数值
+    }
+
+
+</script>
+</html>

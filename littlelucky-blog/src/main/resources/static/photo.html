@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>相片馆</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon"/>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+
+    <!--    公共css-->
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/zplayer.css">
+
+    <!--    流光字样式-->
+    <style type="text/css">
+        h2 {
+            margin: 0;
+            background: -webkit-linear-gradient(left,
+            #ffffff,
+            #ff0000 6.25%,
+            #ff7d00 12.5%,
+            #ffff00 18.75%,
+            #00ff00 25%,
+            #00ffff 31.25%,
+            #0000ff 37.5%,
+            #ff00ff 43.75%,
+            #ffff00 50%,
+            #ff0000 56.25%,
+            #ff7d00 62.5%,
+            #ffff00 68.75%,
+            #00ff00 75%,
+            #00ffff 81.25%,
+            #0000ff 87.5%,
+            #ff00ff 93.75%,
+            #ffff00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            animation: masked-animation 5s infinite linear;
+        }
+
+        @keyframes masked-animation {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -100%, 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="snowflakeContainer"><p class="snowflake">*</p></div>
+<script src="js/fallingsnow_v6.js"></script>
+<script src="js/prefixfree.min.js"></script>
+
+<!--页首-->
+<div class="container-fluid" style="opacity:0.4;height: 60px;line-height: 50px;">
+
+    <div class="row">
+        <div class="col-md-1 col-lg-offset-1">
+            <!--            <img src="img/logo.png"-->
+            <!--                 style="height: 50px; border-radius: 10px;margin-top: 5px;">-->
+        </div>
+
+        <div class="col-md-1 col-md-offset-1">
+            <a href="index.html">
+                <button type="button" class="btn btn-info btn-lg" id="index">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    首页
+                </button>
+            </a>
+        </div>
+
+        <div class="col-md-1">
+            <a href="category.html">
+                <button type="button" class="btn btn-info btn-lg">
+                    <span class="
+                        glyphicon glyphicon-tags" aria-hidden="true"></span>
+                    分类
+                </button>
+            </a>
+
+        </div>
+
+        <div class="col-md-1">
+
+            <a href="timeline.html">
+
+                <button type="button" class="btn btn-info btn-lg" id="timeline">
+                    <span class="
+                        glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    时间
+                </button>
+            </a>
+
+        </div>
+
+        <div class="col-md-1">
+            <a href="photo.html">
+                <button type="button" class="btn btn-success btn-lg" id="musicBox">
+                    <span class="
+                        glyphicon glyphicon-picture" aria-hidden="true"></span>
+                    相片
+                </button>
+            </a>
+        </div>
+
+
+        <div class="col-md-1">
+
+            <a href="message.html">
+                <button type="button" class="btn btn-info btn-lg" id="message">
+                    <span class="
+                        glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    留言
+                </button>
+            </a>
+
+        </div>
+
+
+        <div class="col-md-1">
+            <a href="about.html">
+                <button type="button" class="btn btn-info btn-lg" id="about">
+                    <span class="
+                        glyphicon glyphicon-leaf" aria-hidden="true"></span>
+                    关于
+                </button>
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<div style="text-align: center;color: white">
+    <h1>相片馆
+        <br>
+        <h2>云天收夏色，木叶动秋声。——刘言史《立秋》</h2>
+    </h1>
+</div>
+<br>
+<br>
+
+<div
+        style="width: 80%; margin: 0 auto; background-color: rgb(234, 252, 252);box-shadow: 10px 10px 20px 10px rgb(244, 199, 206); margin-bottom: 50px">
+    <!--    音乐馆换照片馆-->
+    <!--    <div id="player2"></div>-->
+    <br>
+    <!--    <div style="display: inline-block;width: 30%;margin-left: 2.5%;height: 150px;">-->
+    <!--        <img src="https://www.hualigs.cn/image/62d4eed3bdac9.jpg"  style="width: 100%;height: 90%">-->
+    <!--    </div>-->
+    <div id="img"></div>
+
+    <br>
+    <br>
+</div>
+
+<br>
+<br>
+
+<!--页脚-->
+<div class="jumbotron" style="height:auto; text-align: center;background-color:#d1ccc0;opacity:0.8">
+
+    <div class="row">
+        <div class="col-md-4"><h2>联系我</h2>
+            <br> QQ：<a>321395678</a>
+        </div>
+        <div class="col-md-4"><img src="img/wechat.jpg" width="150px"></div>
+        <div class="col-md-4">
+            <h2>LUCKY-SIX</h2>
+            Hello，<br>大家好呀。<br>这是我的个人博客,
+            <br>我会在这分享一些学到的东西。
+            <a href="login.html" style="text-decoration: none"><h3><span class="glyphicon glyphicon-cog"></span>
+                管理后台</h3></a>
+        </div>
+    </div>
+
+    <br>
+    <font style="color:black"><a style="text-decoration: none">Copyright © 2022 - 2022 小幸运 Designed by
+        CHEN</a></font>
+    <br>
+    <font style="color:black"><a style="text-decoration: none"> <img src="/img/备案图标.png">备案号：桂ICP备2022006569号-1</a></font>
+</div>
+
+</body>
+<!--<script src="js/zplayer.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+
+    $.ajax({
+        url: "/img/queryAll",
+        type: "GET",
+        dataType: "json",
+        success: function (resp) {
+            var data = resp.data;
+            var rowList = "";
+            for (let i = 0; i < data.length; i++) {
+                rowList += ' <div style="display: inline-block;width: 30%;margin-left: 2.5%;height: 150px;">\n' +
+                    '        <img src="';
+                rowList += data[i].imgUrl;
+                rowList += '"  style="width: 100%;height: 90%">\n' +
+                    '    </div>';
+            }
+            $("#img").append(rowList);
+            console.log(rowList)
+        }
+    })
+
+
+    // var zp2 = new zplayer({
+    //     element: document.getElementById("player2"),
+    //     lrcStart: 1,/*是否开启歌词功能 ，默认false（为true时musics集合中需要传入lrc字段。）*/
+    //     musics: [{
+    //         title: "讲真的",
+    //         author: "曾惜",
+    //         url: "http://music.163.com/song/media/outer/url?id=30987293.mp3",
+    //         pic: "http://p1.music.126.net/cd9tDyVMq7zzYFbkr0gZcw==/2885118513459477.jpg?param=300x300",
+    //         lrc: "[by:却连一句我爱你都不能说出口]\n[ti:讲真的]\n[ar:曾惜]\n[al:不要你为难]\n[by:冰城离殇]\n[00:00] 作曲 : 何诗蒙\n[00:01] 作词 : 黄然\n[00:18]今夜特别漫长\n[00:21]有个号码一直被存放\n[00:25]源自某种倔强\n[00:30]不舍删去又不敢想\n[00:33]明明对你念念不忘\n[00:37]思前想后愈发紧张\n[00:41]无法深藏\n[00:43]爱没爱过想听你讲\n[00:48]讲真的\n[00:51]会不会是我 被鬼迷心窍了\n[00:54]敷衍了太多 我怎么不难过\n[00:58]要你亲口说 别只剩沉默\n[01:03]或许你早就回答了我\n[01:06]讲真的\n[01:08]想得不可得 是最难割舍的\n[01:11]各自好好过 也好过一直拖\n[01:15]自作多情了 好吧我认了\n[01:19]至少能换来释怀洒脱\n[01:23]没丢失掉自我\n[01:42]今夜特别漫长\n[01:44]有个号码一直被存放\n[01:49]源自某种倔强\n[01:53]不舍删去又不敢想\n[01:57]明明对你念念不忘\n[02:01]思前想后愈发紧张\n[02:05]无法深藏\n[02:08]爱没爱过想听你讲\n[02:13]讲真的\n[02:15]会不会是我 被鬼迷心窍了\n[02:19]敷衍了太多 我怎么不难过\n[02:23]要你亲口说 别只剩沉默\n[02:27]或许你早就回答了我\n[02:30]讲真的\n[02:32]想得不可得 是最难割舍的\n[02:35]各自好好过 也好过一直拖\n[02:40]自作多情了 好吧我认了\n[02:44]至少能换来释怀洒脱\n[02:47]没丢失掉自我\n[03:04]讲真的\n[03:05]会不会是我 被鬼迷心窍了\n[03:09]敷衍了太多 我怎么不难过\n[03:14]要你亲口说 别只剩沉默\n[03:18]或许你早就回答了我\n[03:21]讲真的\n[03:22]想得不可得 是最难割舍的\n[03:26]各自好好过 也好过一直拖\n[03:30]自作多情了 好吧我认了\n[03:35]至少能换来释怀洒脱\n[03:38]没丢失掉自我\n"
+    //     }]
+    // })
+    // zp2.init();
+    // $('.menu.toggle').click(function () {
+    //     $('.m-item').toggleClass('m-mobile-hide');
+    // });
+
+</script>
+
+</html>

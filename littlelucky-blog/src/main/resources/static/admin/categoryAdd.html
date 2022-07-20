@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon"/>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+
+    <!--    公共css-->
+    <link rel="stylesheet" href="../css/public.css">
+    <!--    流光字样式-->
+    <style type="text/css">
+        .jumbotron {
+            border-radius: 5px;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background: url(../img/background2.jpg) fixed;
+            background-size: 100%;
+        }
+
+        h2 {
+            margin: 0;
+            background: -webkit-linear-gradient(left,
+            #ffffff,
+            #ff0000 6.25%,
+            #ff7d00 12.5%,
+            #ffff00 18.75%,
+            #00ff00 25%,
+            #00ffff 31.25%,
+            #0000ff 37.5%,
+            #ff00ff 43.75%,
+            #ffff00 50%,
+            #ff0000 56.25%,
+            #ff7d00 62.5%,
+            #ffff00 68.75%,
+            #00ff00 75%,
+            #00ffff 81.25%,
+            #0000ff 87.5%,
+            #ff00ff 93.75%,
+            #ffff00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            animation: masked-animation 5s infinite linear;
+        }
+
+        @keyframes masked-animation {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -100%, 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!--导航-->
+<div class="container-fluid" style="background-color:#d1ccc0;opacity:0.8;height: 60px;line-height: 50px;">
+
+    <div class="row">
+        <div class="col-md-1 col-lg-offset-1">
+            <!--                <img src="../img/logo.png"-->
+            <!--                     style="height: 50px; border-radius: 10px;margin-top: 5px;">-->
+        </div>
+
+        <div class="col-md-1 col-md-offset-1">
+            <a href="articleManagement.html">
+                <button type="button" class="btn btn-info" id="category">
+                        <span class="
+                            glyphicon glyphicon-tags" aria-hidden="true"></span>
+                    文章管理
+                </button>
+            </a>
+
+
+        </div>
+
+        <div class="col-md-1">
+            <a href="categoryManagement.html">
+
+                <button type="button" class="btn btn-info ">
+                    <span class=" glyphicon glyphicon-tags"></span>
+                    分类管理
+                </button>
+
+            </a>
+
+        </div>
+
+        <div class="col-md-1">
+            <a href="timelineManagement.html">
+                <el-button type="primary" plain></el-button>
+                <button type="button" class="btn btn-info ">
+                    <span class="glyphicon glyphicon-time"></span>
+                    时轴管理
+                </button>
+            </a>
+
+        </div>
+        <div class="col-md-1">
+            <a href="imgManagement.html">
+                <el-button type="primary" plain></el-button>
+                <button type="button" class="btn btn-info ">
+                    <span class="glyphicon glyphicon-time"></span>
+                    照片管理
+                </button>
+            </a>
+        </div>
+
+
+        <div class="col-md-1">
+            <a href="messageManagement.html">
+                <button type="button" class="btn btn-info ">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    留言管理
+                </button>
+            </a>
+
+        </div>
+
+
+        <div class="col-md-1">
+                <button type="button" id="logout" class="btn btn-info ">
+                    注销
+                </button>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<div class="jumbotron" style="width: 80%;margin: 0 auto;margin-top: 5%">
+    <div style="width: 40%;margin: 0 auto">
+        <form>
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon">名称</span>
+                <input type="text" name="name" class="form-control" placeholder="名称"
+                       aria-describedby="sizing-addon1">
+            </div>
+
+            <br>
+            <div style="display: inline-block;float: right">
+                <button type="button" class="btn btn-danger" id="return">返回</button>
+                <button type="button" class="btn btn-success" id="add">添加</button>
+            </div>
+            <br>
+
+        </form>
+    </div>
+
+
+</div>
+
+
+<hr>
+
+<!--页脚-->
+<div class="jumbotron" style="height:auto; text-align: center;background-color:#d1ccc0;opacity:0.8">
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>联系我</h2>
+            <br> QQ：<a>321395678</a>
+        </div>
+        <div class="col-md-4"><img src="../img/wechat.jpg" width="150px"></div>
+        <div class="col-md-4">
+            <h2>LUCKY-SIX</h2>
+            这是我的个人博客,<br>我会在这里分享我的学习历程。
+        </div>
+    </div>
+
+    <br>
+    <font style="color:black"><a style="text-decoration: none">Copyright © 2022 - 2022 小幸运 Designed by
+        CHEN</a></font>
+    <br>
+    <font style="color:black"><a style="text-decoration: none"> <img src="/img/备案图标.png">备案号：桂ICP备2022006569号-1</a></font>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="../js/popMessage.js"></script>
+<script>
+
+    $("#add").click(function () {
+        console.log($("form").serializeObject());
+        $.ajax({
+            url: "/admin/category/add",
+            type: "POST",
+            data: JSON.stringify($("form").serializeObject()),
+            contentType: "application/json;charset=UTF-8",
+            success: function (resp) {
+                if (resp.code == 200) {
+                    Message.success(resp.msg)
+                    window.open("categoryManagement.html", "_self")
+                } else {
+                    Message.error(resp.msg)
+                }
+            }
+        })
+    })
+
+    $("#return").click(function () {
+        window.open("categoryManagement.html", "_self")
+    })
+
+    /**
+     * 自动将form表单封装成json对象
+     */
+    $.fn.serializeObject = function () {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+    $("#logout").click(function () {
+        $.ajax({
+            url: "/user/logout",
+            type: "get",
+            success: function (resp) {
+                Message.success(resp.msg)
+                window.open("/login.html", "_self");
+            }
+        })
+    })
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon"/>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../css/paging.css">
+
+    <!--    流光字样式-->
+    <style type="text/css">
+        .jumbotron {
+            border-radius: 5px;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background: url(../img/background2.jpg) fixed;
+            background-size: 100%;
+        }
+
+        h2 {
+            margin: 0;
+            background: -webkit-linear-gradient(left,
+            #ffffff,
+            #ff0000 6.25%,
+            #ff7d00 12.5%,
+            #ffff00 18.75%,
+            #00ff00 25%,
+            #00ffff 31.25%,
+            #0000ff 37.5%,
+            #ff00ff 43.75%,
+            #ffff00 50%,
+            #ff0000 56.25%,
+            #ff7d00 62.5%,
+            #ffff00 68.75%,
+            #00ff00 75%,
+            #00ffff 81.25%,
+            #0000ff 87.5%,
+            #ff00ff 93.75%,
+            #ffff00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            animation: masked-animation 5s infinite linear;
+        }
+
+        @keyframes masked-animation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -100%, 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!--导航-->
+<div class="container-fluid" style="background-color:#d1ccc0;opacity:0.8;height: 60px;line-height: 50px;">
+
+    <div class="row">
+        <div class="col-md-1 col-lg-offset-1">
+            <!--                <img src="../img/logo.png"-->
+            <!--                     style="height: 50px; border-radius: 10px;margin-top: 5px;">-->
+        </div>
+
+        <div class="col-md-1 col-md-offset-1">
+            <a href="articleManagement.html">
+                <button type="button" class="btn btn-info">
+                    <span class="
+                        glyphicon glyphicon-tags" aria-hidden="true"></span>
+                    文章管理
+                </button>
+            </a>
+
+
+        </div>
+
+        <div class="col-md-1">
+            <a href="categoryManagement.html">
+
+                <button type="button" class="btn btn-info " id="category">
+                    <span class=" glyphicon glyphicon-tags"></span>
+                    分类管理
+                </button>
+
+            </a>
+
+        </div>
+
+        <div class="col-md-1">
+            <a href="timelineManagement.html">
+                <el-button type="primary" plain></el-button>
+                <button type="button" class="btn btn-info ">
+                    <span class="glyphicon glyphicon-time"></span>
+                    时轴管理
+                </button>
+            </a>
+        </div>
+
+        <div class="col-md-1">
+            <a href="imgManagement.html">
+                <el-button type="primary" plain></el-button>
+                <button type="button" class="btn btn-info ">
+                    <span class="glyphicon glyphicon-time"></span>
+                    照片管理
+                </button>
+            </a>
+        </div>
+
+
+        <div class="col-md-1">
+            <a href="messageManagement.html">
+                <button type="button" class="btn btn-success ">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    留言管理
+                </button>
+            </a>
+
+        </div>
+
+
+        <div class="col-md-1">
+            <button type="button" id="logout" class="btn btn-info ">
+                注销
+            </button>
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="jumbotron" style="width: 80%;margin: 10px auto;margin-top: 5%">
+    <!-- Table -->
+    <table class="table table-hover " style="width: 80%;text-align: center;margin: 0 auto">
+        <tr id="filed">
+            <td id="id">ID</td>
+            <td id="accessIp">访问IP</td>
+            <td id="messageContent">留言内容</td>
+            <td id="messageTime">留言时间</td>
+            <td id="qq">QQ</td>
+            <td>操作</td>
+        </tr>
+        <tbody id="tbody"></tbody>
+
+        <!--            <tr style="">-->
+        <!--                <td>1</td>-->
+        <!--                <td>127.0.0.1</td>-->
+        <!--                <td>您好呀！</td>-->
+        <!--                <td>2022年7月12日23:01:14</td>-->
+        <!--                <td>321395678</td>-->
+        <!--                <td>-->
+        <!--                    <a href="messageEdit.html">-->
+        <!--                        &lt;!&ndash; Indicates caution should be taken with this action &ndash;&gt;-->
+        <!--                        <button type="button" class="btn btn-warning">编辑</button>-->
+        <!--                    </a>-->
+
+        <!--                    &lt;!&ndash; Indicates a dangerous or potentially negative action &ndash;&gt;-->
+        <!--                    <button type="button" class="btn btn-danger" onclick="del(this,'id')">删除</button>-->
+        <!--                </td>-->
+        <!--            </tr>-->
+
+    </table>
+    <br>
+    <br>
+    <div id="pageTool" style="margin-right: 7%"></div>
+</div>
+
+
+<hr>
+
+<!--页脚-->
+<div class="jumbotron" style="height:auto; text-align: center;background-color:#d1ccc0;opacity:0.8">
+
+    <div class="row">
+        <div class="col-md-4"><h2>联系我</h2>
+            <br> QQ：<a>321395678</a>
+        </div>
+        <div class="col-md-4"><img src="../img/wechat.jpg" width="150px"></div>
+        <div class="col-md-4">
+            <h2>LUCKY-SIX</h2>
+            这是我的个人博客,<br>我会在这里分享我的学习历程。
+        </div>
+    </div>
+
+    <br>
+    <font style="color:black"><a style="text-decoration: none">Copyright © 2022 - 2022 小幸运 Designed by
+        CHEN</a></font>
+    <br>
+    <font style="color:black"><a style="text-decoration: none"> <img
+            src="/img/备案图标.png">备案号：桂ICP备2022006569号-1</a></font>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../js/popMessage.js"></script>
+<script type="text/javascript" src="../js/paging.js"></script>
+<script>
+    var total = 0;
+    var page = new Paging();
+    $.get('/admin/message/queryByPage', {current: 1, pagesize: 5}, function (resp) {
+        total = resp.total;
+        var data = resp.data;
+        // console.log(data)
+        var rowList = "";
+        for (let i = 0; i < data.length; i++) {
+            // console.log(data[i].id);
+            // console.log(data[i].accessIp);
+            // console.log(data[i].messageContent);
+            // console.log(data[i].messageTime);
+            // console.log(data[i].qq);
+            rowList += '<tr style="">';
+
+            rowList += '<td>';
+            rowList += data[i].id;
+            rowList += '</td>';
+
+            rowList += '<td>';
+            rowList += data[i].accessIp;
+            rowList += '</td>';
+
+            rowList += '<td>';
+            rowList += data[i].messageContent;
+            rowList += '</td>';
+
+            rowList += '<td>';
+            rowList += data[i].messageTime;
+            rowList += '</td>';
+
+            rowList += '<td>';
+            rowList += data[i].qq;
+            rowList += '</td>';
+
+            rowList += '<td>\n' +
+                '                    <a href="messageEdit.html?id=';
+            rowList += data[i].id;
+            rowList += '">\n' +
+                '                        <!-- Indicates caution should be taken with this action -->\n' +
+                '                        <button type="button" class="btn btn-warning">编辑</button>\n' +
+                '                    </a>\n' +
+                '\n' +
+                '                    <!-- Indicates a dangerous or potentially negative action -->\n' +
+                '                    <button type="button" class="btn btn-danger" onclick="del(this,\'id\')">删除</button>' +
+                '           <button type="button" class="btn btn-info" onclick="query(this,\'accessIp\')">ip属地查询</button>\n' +
+                '                </td>\n' +
+                '            </tr>';
+        }
+        $("#tbody").append(rowList)
+
+        page.init({
+            target: $('#pageTool'), pagesize: 5, count: total, current: 1,
+            // 这个callback，是点击后的回调函数
+            callback: function (pagecount, size) {
+                $.get('/admin/message/queryByPage', {current: pagecount, pagesize: size}, function (resp) {
+                    total = resp.total;
+                    // console.log(total)
+                    var data = resp.data;
+                    var rowList = "";
+                    for (let i = 0; i < data.length; i++) {
+                        // console.log(data[i].id);
+                        // console.log(data[i].accessIp);
+                        // console.log(data[i].messageContent);
+                        // console.log(data[i].messageTime);
+                        // console.log(data[i].qq);
+                        rowList += '<tr style="">';
+
+                        rowList += '<td>';
+                        rowList += data[i].id;
+                        rowList += '</td>';
+
+                        rowList += '<td>';
+                        rowList += data[i].accessIp;
+                        rowList += '</td>';
+
+                        rowList += '<td>';
+                        rowList += data[i].messageContent;
+                        rowList += '</td>';
+
+                        rowList += '<td>';
+                        rowList += data[i].messageTime;
+                        rowList += '</td>';
+
+                        rowList += '<td>';
+                        rowList += data[i].qq;
+                        rowList += '</td>';
+
+                        rowList += '<td>\n' +
+                            '                    <a href="messageEdit.html?id=';
+                        rowList += data[i].id;
+                        rowList += '">\n' +
+                            '                        <!-- Indicates caution should be taken with this action -->\n' +
+                            '                        <button type="button" class="btn btn-warning">编辑</button>\n' +
+                            '                    </a>\n' +
+                            '\n' +
+                            '                    <!-- Indicates a dangerous or potentially negative action -->\n' +
+                            '                    <button type="button" class="btn btn-danger" onclick="del(this,\'id\')">删除</button>' +
+                            '<button type="button" class="btn btn-info" onclick="query(this,\'accessIp\')">ip属地查询</button>\n' +
+                            '                </td>\n' +
+                            '            </tr>';
+                    }
+                    document.getElementById("tbody").innerHTML = "";
+                    $("#tbody").append(rowList)
+                    page.render({count: total, current: pagecount});
+                })
+            }
+        });
+    })
+
+    // $.ajax({
+    //     url: "../api/admin/messageManagement.json",
+    //     type: "GET",
+    //     success: function (resp) {
+    //         var data = resp.data;
+    //         // console.log(data)
+    //         var rowList = "";
+    //         for (let i = 0; i < data.length; i++) {
+    //             // console.log(data[i].id);
+    //             // console.log(data[i].accessIp);
+    //             // console.log(data[i].messageContent);
+    //             // console.log(data[i].messageTime);
+    //             // console.log(data[i].qq);
+    //             rowList += '<tr style="">';
+    //
+    //             rowList += '<td>';
+    //             rowList += data[i].id;
+    //             rowList += '</td>';
+    //
+    //             rowList += '<td>';
+    //             rowList += data[i].accessIp;
+    //             rowList += '</td>';
+    //
+    //             rowList += '<td>';
+    //             rowList += data[i].messageContent;
+    //             rowList += '</td>';
+    //
+    //             rowList += '<td>';
+    //             rowList += data[i].messageTime;
+    //             rowList += '</td>';
+    //
+    //             rowList += '<td>';
+    //             rowList += data[i].qq;
+    //             rowList += '</td>';
+    //
+    //             rowList += '<td>\n' +
+    //                 '                    <a href="messageEdit.html?id=';
+    //             rowList += data[i].id;
+    //             rowList += '">\n' +
+    //                 '                        <!-- Indicates caution should be taken with this action -->\n' +
+    //                 '                        <button type="button" class="btn btn-warning">编辑</button>\n' +
+    //                 '                    </a>\n' +
+    //                 '\n' +
+    //                 '                    <!-- Indicates a dangerous or potentially negative action -->\n' +
+    //                 '                    <button type="button" class="btn btn-danger" onclick="del(this,\'id\')">删除</button>\n' +
+    //                 '                </td>\n' +
+    //                 '            </tr>';
+    //         }
+    //         $("#tbody").append(rowList)
+    //     }
+    // })
+
+    function query(row, filed) {
+        var tableHeadId = "#filed";
+        var ip = getCurrentRowFiledValue(row, filed, tableHeadId);
+        // console.log("访问ip=====>" + ip);
+        if (ip === "127.0.0.1") {
+            Message.success("本机地址")
+        } else {
+            $.ajax({
+                url: "https://ip.useragentinfo.com/json?ip=" + ip,
+                type: "get",
+                //如果json字符串，不能自动转变js对象，添加这行
+                dataType: "JSON",
+                contentType: "application/json;charset=UTF-8",
+                success: function (resp) {
+                    console.log("ip归属地====>" + resp.province + resp.city + resp.area)
+                    Message.success("ip归属地====>" + resp.province + resp.city + resp.area)
+                }
+            })
+        }
+
+    }
+
+    function del(row, filed) {
+        var tableHeadId = "#filed";
+        var id = getCurrentRowFiledValue(row, filed, tableHeadId);
+        console.log("id===>" +id);
+        var msg = "你确定要删除吗?"
+        if (confirm(msg) == true) {
+            $.ajax({
+                url: "/admin/message/delete?id=" + id,
+                type:"delete",
+                success:function () {
+                    //删除成功后，重新渲染表格
+                    $.get('/admin/message/queryByPage', {current: 1, pagesize: 5}, function (resp) {
+                        total = resp.total;
+                        // console.log(total)
+                        var data = resp.data;
+                        var rowList = "";
+                        for (let i = 0; i < data.length; i++) {
+                            // console.log(data[i].id);
+                            // console.log(data[i].accessIp);
+                            // console.log(data[i].messageContent);
+                            // console.log(data[i].messageTime);
+                            // console.log(data[i].qq);
+                            rowList += '<tr style="">';
+
+                            rowList += '<td>';
+                            rowList += data[i].id;
+                            rowList += '</td>';
+
+                            rowList += '<td>';
+                            rowList += data[i].accessIp;
+                            rowList += '</td>';
+
+                            rowList += '<td>';
+                            rowList += data[i].messageContent;
+                            rowList += '</td>';
+
+                            rowList += '<td>';
+                            rowList += data[i].messageTime;
+                            rowList += '</td>';
+
+                            rowList += '<td>';
+                            rowList += data[i].qq;
+                            rowList += '</td>';
+
+                            rowList += '<td>\n' +
+                                '                    <a href="messageEdit.html?id=';
+                            rowList += data[i].id;
+                            rowList += '">\n' +
+                                '                        <!-- Indicates caution should be taken with this action -->\n' +
+                                '                        <button type="button" class="btn btn-warning">编辑</button>\n' +
+                                '                    </a>\n' +
+                                '\n' +
+                                '                    <!-- Indicates a dangerous or potentially negative action -->\n' +
+                                '                    <button type="button" class="btn btn-danger" onclick="del(this,\'id\')">删除</button>' +
+                                '<button type="button" class="btn btn-info" onclick="query(this,\'accessIp\')">ip属地查询</button>\n' +
+                                '                </td>\n' +
+                                '            </tr>';
+                        }
+                        document.getElementById("tbody").innerHTML = "";
+                        $("#tbody").append(rowList)
+                        page.render({count: total, current: 1});
+                    })
+                }
+            })
+        }
+
+    }
+
+
+    //row，当前行的this对象.filed，需要获取的字段值.tableHeadId，table表头行row的ID值.
+    function getCurrentRowFiledValue(row, filed, tableHeadId) {
+        //获取table表头所有td
+        var fileds = $(tableHeadId).children();
+        //记录表头中所有的字段
+        var tableHeadFileds = [];
+        //  长度-1，是减去操作列.
+        for (let i = 0; i < fileds.length - 1; i++) {
+            tableHeadFileds.push(fileds[i].id)
+        }
+        //找到当前行，指定的字段值.
+        for (let i = 0; i < tableHeadFileds.length; i++) {
+            if (tableHeadFileds[i] == filed) {
+                //返回当前行的指定字段值.
+                return $(row).parent().parent().children()[i].innerHTML;
+            }
+        }
+    }
+
+    $("#logout").click(function () {
+        $.ajax({
+            url: "/user/logout",
+            type: "get",
+            success: function (resp) {
+                Message.success(resp.msg)
+                window.open("/login.html", "_self");
+            }
+        })
+    })
+
+</script>
+
+</html>

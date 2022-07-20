@@ -1,0 +1,31 @@
+{
+  "code": 200,
+  "msg": "查询成功",
+  "pages": 0,
+  "data": [
+    {
+      "id": 1,
+      "content": "精忠报国、拥护人民利益",
+      "createTime": "2022-07-13 12:52:20",
+      "nickName": "Lucky-SIX"
+    },
+    {
+      "id": 1,
+      "content": "精忠报国、拥护人民利益",
+      "createTime": "2022-07-13 12:52:20",
+      "nickName": "Lucky-SIX"
+    },
+    {
+      "id": 1,
+      "content": "精忠报国、拥护人民利益",
+      "createTime": "2022-07-13 12:52:20",
+      "nickName": "Lucky-SIX"
+    },
+    {
+      "id": 1,
+      "content": "精忠报国、拥护人民利益",
+      "createTime": "2022-07-13 12:52:20",
+      "nickName": "Lucky-SIX"
+    }
+  ]
+}
